@@ -1,0 +1,89 @@
+<p>
+ Friends :{{friends}}
+</p>
+
+<ol>
+  <li *ngFor="let f of friends;let counter=index"> 
+    {{f | uppercase}}. 
+    Counter number {{counter}}
+    <button (click)="DisplayText(counter)" >Click {{f}} </button>
+   </li>
+</ol>
+
+<hr>
+<div>
+
+  Demo of *ngFor Directives with JSON Array
+
+  <table border=1>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>City</th>
+        <th>STD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of locations">
+        <td> {{l.id}} </td>
+        <td> {{l.city}} </td>
+        <td> {{l.code}} </td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
+<hr>
+<div>
+Demo of *ngFor Directives with JSON Array for Users
+<table border=1>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>UserName</th>
+    <th>Zipcode</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+</thead>
+  <tbody>
+    <tr *ngFor="let u of Users">
+      <td>{{u.id}} </td>
+      <td>{{u.username}} </td>
+      <td>{{u.address.zipcode}} </td>
+      <td>{{u.address.geo.lat}} </td>
+      <td>{{u.address.geo.lng}} </td>
+    </tr>
+  </tbody>  
+</table>
+</div>
+<hr>
+<div>
+    Demo of *ngIf Directive
+    <button (click)="toggleCheck()">Toggle Check</button>
+<div class="box" *ngIf="check">
+ 
+</div>
+</div>
+<hr>
+<div>
+  Demo of *ngIf directive with else criteria:
+  <button (click)="IfElseCheck()">IfElseCheck</button>
+  <div class="Ifbox" *ngIf="checkelse;else elseTemplate" >
+
+  </div>
+  <ng-template #elseTemplate>
+<div class="ElseBox"></div>
+  </ng-template>  
+</div>
+<hr>
+<div>
+  Demo of *ngSwitch app-directive  
+  <div [ngSwitch]="city">
+    <span *ngSwitchCase="'044'">Chennai</span>
+    <span *ngSwitchCase="'055'">Mumbai</span>
+    <span *ngSwitchCase="'066'">Pune</span>
+    <span *ngSwitchCase="'077'">Bangalore</span>
+    <span *ngSwitchDefault>Code/City not available</span>
+  </div>
+</div>
+<br>
