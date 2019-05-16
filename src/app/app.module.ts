@@ -16,6 +16,9 @@ import { ThumbnailComponent } from './assignment/allcomponents/thumbnail/thumbna
 import { DirectiveComponent } from './super-html/directive/directive.component';
 import { PipesComponent } from './pipedemo/pipes/pipes.component';
 import { BadrouteComponent } from './notfound/badroute/badroute.component';
+import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.component';
+import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
+import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
     ThumbnailComponent,
     DirectiveComponent,
     PipesComponent,
-    BadrouteComponent
+    BadrouteComponent,
+    ConsumeparentComponent,
+    Consumechild1Component,
+    Consumechild2Component
   ],
   imports: [
     BrowserModule,
@@ -80,6 +86,10 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
       {
         path:'pipe',
         component:PipesComponent
+      },
+      {
+        path:'consume',
+        component:ConsumeparentComponent
       },
       {
         path:'**',
