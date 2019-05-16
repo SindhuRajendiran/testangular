@@ -1,6 +1,20 @@
 <p>
   I am Consume Parent Component.I have 2 child
 </p>
-  <div class="child1">I am child 1 --> <app-consumechild1></app-consumechild1> </div><br>
-  <div class="child2">I am child 2 --><app-consumechild2></app-consumechild2> </div>
+<br>
+Received from Parent:{{name}}
+<div>  
+I am child:<app-child [sendName]="name" (sendToParent)="receivedNameFromChild($event)"></app-child>
+</div>
+<br>
+<hr>
+<a routerLink="child1">Child 1</a> &nbsp;
+<a routerLink="child2">Child 2</a> &nbsp;
+<br>
+<br>
+<router-outlet></router-outlet>
 
+ <!-- <div class="child1">I am child 1  <app-consumechild1></app-consumechild1> </div><br>
+  <div class="child2">I am child 2 <app-consumechild2></app-consumechild2> </div>-->
+
+ 

@@ -8,14 +8,14 @@ export class LocalService {
   myPI=3.14;
   banks=['sbi','rbl','iob']
 
-
   displayBanks()
   {
-    console.log(this.banks)
+    console.log(this.banks);   
   }
 
   addBank(){
    this.banks.push('hdfc');
+   return this.banks;
   }
 
   constructor() { }

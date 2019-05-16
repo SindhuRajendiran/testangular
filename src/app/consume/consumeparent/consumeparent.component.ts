@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsumeparentComponent implements OnInit {
 
+
+  name="Angular 7";
   constructor() { }
 
   ngOnInit() {
+  }
+
+  receivedNameFromChild=function(e){
+      console.log(e);
+      this.name=e;
   }
 
 }

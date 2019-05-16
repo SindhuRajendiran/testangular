@@ -8,6 +8,7 @@ import { LocalService } from 'src/app/services/local.service';
 })
 export class Consumechild1Component implements OnInit {
 
+  allbanks:any
   constructor(private local:LocalService) {
     console.log("1") ;
   }
@@ -17,10 +18,8 @@ export class Consumechild1Component implements OnInit {
     this.accessLocalService()    
   }
   accessLocalService=function(){
-      console.log(this.local.myPI);
-      this.local.displayBanks();
-      this.local.addBank();
-      this.local.displayBanks();
+      console.log(this.local.myPI);       
+      this.allbanks=this.local.addBank();      
   }
 
 }

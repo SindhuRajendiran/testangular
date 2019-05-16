@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-consumechild2',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Consumechild2Component implements OnInit {
 
-  constructor() { }
+  allBanks:any
+  constructor(private local:LocalService) { }
 
-  ngOnInit() {
+  ngOnInit() {    
+    this.allBanks=this.local.addBank();      
   }
 
 }

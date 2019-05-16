@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule} from "@angular/forms"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
 import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.component';
 import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
 import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
+import { ChildComponent } from './consume/child/child.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,13 @@ import { Consumechild2Component } from './consume/consumechild2/consumechild2.co
     BadrouteComponent,
     ConsumeparentComponent,
     Consumechild1Component,
-    Consumechild2Component
+    Consumechild2Component,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -88,8 +92,18 @@ import { Consumechild2Component } from './consume/consumechild2/consumechild2.co
         component:PipesComponent
       },
       {
-        path:'consume',
-        component:ConsumeparentComponent
+        path:'consumeservice',
+        component:ConsumeparentComponent,
+        children:[
+          {
+            path:'child1',
+            component:Consumechild1Component
+          },
+          {
+            path:'child2',
+            component:Consumechild2Component
+          }
+        ]
       },
       {
         path:'**',

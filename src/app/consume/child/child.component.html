@@ -1,0 +1,9 @@
+<p>
+  child works!
+</p>
+Received from Child :{{sendName}}
+<br>
+Change Name:<input type="text" [(ngModel)]="sendName">
+<button (click)="broadcastChange()">BroadCast Change</button>
+<br>
+New Name: {{sendName}}
