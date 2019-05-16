@@ -8,9 +8,12 @@ import { LocalService } from 'src/app/services/local.service';
 })
 export class Consumechild1Component implements OnInit {
 
-  constructor(private local:LocalService) { }
+  constructor(private local:LocalService) {
+    console.log("1") ;
+  }
 
   ngOnInit() {
+    console.log("2");
     this.accessLocalService()    
   }
   accessLocalService=function(){
