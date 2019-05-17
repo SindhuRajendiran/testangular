@@ -21,6 +21,8 @@ import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.co
 import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
 import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
 import { ChildComponent } from './consume/child/child.component';
+import { TemplateformComponent } from './forms/templateform/templateform.component';
+import { ReactiveformComponent } from './forms/reactiveform/reactiveform.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ChildComponent } from './consume/child/child.component';
     ConsumeparentComponent,
     Consumechild1Component,
     Consumechild2Component,
-    ChildComponent
+    ChildComponent,
+    TemplateformComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
@@ -104,6 +108,14 @@ import { ChildComponent } from './consume/child/child.component';
             component:Consumechild2Component
           }
         ]
+      },
+      {
+        path:'template',
+        component:TemplateformComponent
+      },
+      {
+        path:'reactive',
+        component:ReactiveformComponent
       },
       {
         path:'**',
